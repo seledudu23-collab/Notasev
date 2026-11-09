@@ -7,6 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Baixar projeto
         uses: actions/checkout@v4
@@ -15,13 +16,12 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 17
-
+          java-version: '17'
 
       - name: Extrair ZIP
-        run:unzip -o Nota-Se-CORRIGIDO.zip -d projeto
-cp -r projeto/* ./
-
+        run: |
+          unzip -o Nota-Se-CORRIGIDO.zip -d projeto
+          cp -r projeto/. ./
 
       - name: Compilar APK
         run: gradle assembleDebug
