@@ -20,7 +20,7 @@ jobs:
 
       - name: Extrair ZIP
         run: |
-          unzip Nota-Se-Mobile-pronto-para-compilar.zip -d projeto
+          unzip Nota-Se-CORRIGIDO.zip -d projeto
           cp -r projeto/.github ./
           cp -r projeto/* ./
 
